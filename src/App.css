@@ -1,0 +1,8 @@
+button{
+    transition: all ease 0.3s;
+}
+
+button:active{
+    scale:0.95;
+}
+
