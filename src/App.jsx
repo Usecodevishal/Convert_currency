@@ -7,8 +7,8 @@ import { InputBox } from "./components";
 function App() {
   const BackgroundImage = "https://media.istockphoto.com/id/1288703928/photo/finance-and-economy-chart-for-dollar-gold-euro-currencies-trading-view.jpg?b=1&s=612x612&w=0&k=20&c=nYeW_7EyHWNwVwEFnK6oPLGSR1aNau7-Agcu8Uqt4RU=";
   const [amount, setAmount] = useState(0);
-  const [from, setFrom] = useState("usd");
-  const [to, setTo] = useState("inr");
+  const [from, setFrom] = useState("USD");
+  const [to, setTo] = useState("INR");
   const [convertedAmount, setConvertedAmount] = useState(0);
   const currencyInfo = useCurrencyInfo(from);
 
@@ -22,15 +22,15 @@ function App() {
   };
 
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo[to]);
+    setConvertedAmount(amount * currencyInfo[from]);
     console.log(to,from,currencyInfo[from],currencyInfo[to])
     console.log(currencyInfo);
     console.log(convertedAmount);
   }; 
 
-//   useEffect(()=>{
-//     convert();
-//   },[convertedAmount])
+  useEffect(()=>{
+    convert();
+  },[convertedAmount])
 
   return (
     <div
